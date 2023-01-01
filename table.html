@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Table</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+        * {
+  border: 0;
+  padding: 0;
+  
+   
+}
+table,
+th,
+tr,
+td {
+  border: solid rgb(0, 0, 0);
+  border-collapse: collapse;
+  padding: 5px;
+  font-size: 15px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.center .caption {
+  padding: 10px 0 30px 0;
+  font-size: 35px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  text-decoration: underline;
+  color: rgb(3, 3, 3);
+  font-weight: bold;
+}
+.center .serial_number {
+  text-align: center;
+}
+
+
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center th {
+  font-size: 22px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#data {
+  margin-bottom: 10px;
+}
+#data input,
+button {
+  padding: 10px;
+  width: 90px;
+}
+.center {
+  counter-reset:serial-number;
+}
+.center td:first-child:before {
+  counter-increment: serial-number;
+  content: counter(serial-number);
+  text-align: center;
+}
+.button_bottom,.button_top{
+  text-align: center;
+  align-items: center;
+}
+.button_top,
+.button_bottom {
+  
+  background-color: rgb(233, 255, 30);
+  border: 2px solid rgb(7, 7, 7);
+  color: black;
+  font-weight: bold;
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: inline-block;
+  margin: auto -400px auto 400px;
+  cursor: pointer;
+  width: fit-content;
+}
+    </style>
+</head>
+<body>
+    //  margin: auto -550px auto 600px;
+    <table class="center">
+        <caption class="caption">
+          Assignment 1 (Table)
+        </caption>
+        <thead>
+          <th scope="col">S. No.</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">City</th>
+          <th scope="col">Country</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="serial_number">1</td>
+            <td>Ashvinkumar</td>
+            <td>Bari</td>
+            <td>Pune</td>
+            <td>India</td>
+          </tr>
+          <tr>
+            <td class="serial_number">2</td>
+            <td>Ravindra</td>
+            <td>Kumbhar</td>
+            <td>Pune</td>
+            <td>India</td>
+          </tr>
+          <tr>
+            <td class="serial_number">3</td>
+            <td>Tejas</td>
+            <td>Saykar</td>
+            <td>Pune</td>
+            <td>India</td>
+          </tr>
+          <tr>
+            <td class="serial_number">4</td>
+            <td>Taniya</td>
+            <td>Tadvi</td>
+            <td>Pune</td>
+            <td>India</td>
+          </tr>
+          <tr>
+            <td class="serial_number">5</td>
+            <td>Divya</td>
+            <td>Bari</td>
+            <td>Pune</td>
+            <td>India</td>
+          </tr>
+        </tbody>
+      </table>
+      // JS 
+      <table class="center" id="Table">
+        <caption class="caption">
+          Assignment 1 (Button)
+        </caption>
+        <thead>
+          <th scope="col">S. No.</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">City</th>
+          <th scope="col">Country</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="serial_number">&nbsp;</td>
+            <td> Ashvinkumar</td>
+            <td>Bari</td>
+            <td>Pune</td>
+            <td>India</td>
+          </tr>
+          <tr>
+            <td class="serial_number">&nbsp;</td>
+            <td>Ravindra</td>
+            <td>Kumbhar</td>
+            <td>Pune</td>
+            <td>India</td>
+          </tr>
+          <tr>
+            <td class="serial_number">&nbsp;</td>
+            <td>Tejas</td>
+            <td>Saykar</td>
+            <td>Pune</td>
+            <td>India</td>
+          </tr>
+          <tr>
+            <td class="serial_number">&nbsp;</td>
+            <td>Taniya</td>
+            <td>Tadvi</td>
+            <td>Pune</td>
+            <td>India</td>
+          </tr>
+          <tr>
+            <td class="serial_number">&nbsp;</td>
+            <td>Ekla</td>
+            <td>Josin</td>
+            <td>Pune</td>
+            <td>India</td>
+          </tr>
+        </tbody>
+      </table>
+      <br />
+  
+      <button class="button_top" type="button" onclick="myFunction_top()">
+        Add row to top
+      </button>
+      <button class="button_bottom" type="button" onclick="myFunction_bottom()">
+        Add row to bottom
+      </button>
+  
+      <script>
+        function myFunction_top() {
+          var table = document.getElementById("Table");
+          var row = table.insertRow(1);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var cell3 = row.insertCell(2);
+          var cell4 = row.insertCell(3);
+          var cell5 = row.insertCell(4);
+          cell1.innerHTML = "";
+          cell2.innerHTML = "Rahul ";
+          cell3.innerHTML = "Raut";
+          cell4.innerHTML = "Pune";
+          cell5.innerHTML = "India";
+        }
+        function myFunction_bottom() {
+          var table = document.getElementById("Table");
+          var row = table.insertRow(-1);
+          var cell1 = row.insertCell(0);
+          var cell2 = row.insertCell(1);
+          var cell3 = row.insertCell(2);
+          var cell4 = row.insertCell(3);
+          var cell5 = row.insertCell(4);
+          cell1.innerHTML = "";
+          cell2.innerHTML = "Ashu";
+          cell3.innerHTML = "Raut";
+          cell4.innerHTML = "Pune";
+          cell5.innerHTML = "India";
+        }
+      </script>
+</body>
+</html>
